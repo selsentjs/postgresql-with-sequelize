@@ -1,0 +1,41 @@
+step1: npm install --save sequelize
+step2: npm install --save pg pg-hstore,npm install --save-dev sequelize-cli,npx sequelize-cli init
+step3: goto config.json and write
+ {
+    "development"
+        "username": "postgres",
+        "password": "root",
+        "database": "productDetails",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+}
+step4: To create model:
+        npx sequelize-cli model:generate --name product --attributes productName:string,quanity:real,department:string
+step5: Go to model folder inside product.js
+add tableName and type, allowNull
+Ex:
+product.init({
+    productName: {
+      type:DataTypes.STRING,
+      allowNull:false,
+    },
+    quanity: {
+     type: DataTypes.REAL,
+      allowNull: false,
+    },
+    department: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
+  }, {
+    sequelize,
+    tableName:'products',
+    modelName: 'product',
+  });
+  return product;
+};
+step6:
+step7:
+step8:
+step9:
+step10:
