@@ -10,7 +10,7 @@ step3: goto config.json and write
         "dialect": "postgres"
 }
 step4: To create model:
-        npx sequelize-cli model:generate --name product --attributes productName:string,quanity:real,department:string
+        npx sequelize-cli model:generate --name product --attributes name:string,quantity:real,department:string
 step5: Go to model folder inside product.js
 add tableName and type, allowNull
 Ex:
